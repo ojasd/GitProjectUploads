@@ -1,0 +1,397 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/road_trip_one"
+    tools:context="com.example.madproject.TripDetailsActivity"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+    
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textViewTripNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewTripName"
+                android:text="@string/hintTripName"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewTripName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textViewStartPointLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewStartPointText"
+                android:text="@string/detailsStartingPoint"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewStartPointText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textViewDestinationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewDestinationText"
+                android:text="@string/detailsDestPoint"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewDestinationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textViewStartDateLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewStartDateText"
+                android:text="@string/detailsStartDate"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewStartDateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textViewStartTimeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewStartTimeText"
+                android:text="@string/detailsStartTime"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewStartTimeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textViewDest1Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewDest1Text"
+                android:text="@string/detailsAddnDestn1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewDest1Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#2e0854"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textViewDest2Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewDest2Text"
+                android:text="@string/detailsAddnDestn2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewDest2Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textViewDest3Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewDest3Text"
+                android:text="@string/detailsAddnDestn3"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewDest3Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textViewDest4Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewDest4Text"
+                android:text="@string/detailsAddnDestn4"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewDest4Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textViewDest5Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:labelFor="@+id/textViewDest5Text"
+                android:text="@string/detailsAddnDestn5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textViewDest5Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textColorHighlight="#d62c21"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" 
+            >
+
+            <Button
+                android:id="@+id/buttonStartTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/green_rounded_button"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="@string/detailsStartTripButtonLabel"
+                android:textColor="#ffffff"
+                android:typeface="serif"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/buttonGoBackToTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/green_rounded_button"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/detailsInPrgTripButtonLabel"
+                android:layout_alignParentLeft="true"
+                android:textColor="#ffffff"
+                android:typeface="serif"
+                android:gravity="center"
+                android:visibility="gone" />
+            
+            <Button
+                android:id="@+id/buttonVerifyOnCompleteTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/green_rounded_button"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/detailsVerifyCompletedTripButtonLabel"
+                android:textColor="#ffffff"
+                android:typeface="serif"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textViewCompletedTripText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detailsTripCmpltdTextView"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#00611C"
+                android:typeface="serif"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone" 
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

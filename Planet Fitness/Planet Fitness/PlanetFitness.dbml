@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UNCCDB_1" Class="PlanetFitnessDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=wlvh0d7nsk.database.windows.net;Initial Catalog=UNCCDB_1;Persist Security Info=True;User ID=unccdb" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UNCCDB_1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Activity" Member="Activities">
+    <Type Name="Activity">
+      <Column Name="ActivityID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Activity_vc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Activity_Slot" Member="Slots" ThisKey="ActivityID_in" OtherKey="FK_Activity_Slot_in" Type="Slot" />
+      <Association Name="Activity_SlotInformation" Member="SlotInformations" ThisKey="ActivityID_in" OtherKey="FK_Activity_SlotInformation_in" Type="SlotInformation" />
+      <Association Name="Activity_Trainer" Member="Trainers" ThisKey="ActivityID_in" OtherKey="FK_Activity_Trainer_in" Type="Trainer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CardDetails" Member="CardDetails">
+    <Type Name="CardDetail">
+      <Column Name="CardDetailsID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_Member_CardDetails_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CardNo_in" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ExpDate_vc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CardAliasName_vc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Member_CardDetail" Member="Member" ThisKey="FK_Member_CardDetails_in" OtherKey="MemberID_in" Type="Member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="MemberID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BillAmount_de" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FK_UserAccount_Member_in" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Member_CardDetail" Member="CardDetails" ThisKey="MemberID_in" OtherKey="FK_Member_CardDetails_in" Type="CardDetail" />
+      <Association Name="Member_SlotInformation" Member="SlotInformations" ThisKey="MemberID_in" OtherKey="FK_Member_SlotInformation_in" Type="SlotInformation" />
+      <Association Name="UserAccount_Member" Member="UserAccount" ThisKey="FK_UserAccount_Member_in" OtherKey="UserAccountID_in" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Slot" Member="Slots">
+    <Type Name="Slot">
+      <Column Name="SlotID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_Activity_Slot_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime_vc" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime_vc" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfSlots_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AvailableSlots_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_Trainer_Slot_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Slot_SlotInformation" Member="SlotInformations" ThisKey="SlotID_in" OtherKey="FK_Slot_SlotInformation_in" Type="SlotInformation" />
+      <Association Name="Activity_Slot" Member="Activity" ThisKey="FK_Activity_Slot_in" OtherKey="ActivityID_in" Type="Activity" IsForeignKey="true" />
+      <Association Name="Trainer_Slot" Member="Trainer" ThisKey="FK_Trainer_Slot_in" OtherKey="TrainerID_in" Type="Trainer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SlotInformation" Member="SlotInformations">
+    <Type Name="SlotInformation">
+      <Column Name="SlotInformationID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_Slot_SlotInformation_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_Activity_SlotInformation_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_Member_SlotInformation_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Activity_SlotInformation" Member="Activity" ThisKey="FK_Activity_SlotInformation_in" OtherKey="ActivityID_in" Type="Activity" IsForeignKey="true" />
+      <Association Name="Member_SlotInformation" Member="Member" ThisKey="FK_Member_SlotInformation_in" OtherKey="MemberID_in" Type="Member" IsForeignKey="true" />
+      <Association Name="Slot_SlotInformation" Member="Slot" ThisKey="FK_Slot_SlotInformation_in" OtherKey="SlotID_in" Type="Slot" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trainer" Member="Trainers">
+    <Type Name="Trainer">
+      <Column Name="TrainerID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_Activity_Trainer_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_UserAccount_Trainer_in" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Trainer_Slot" Member="Slots" ThisKey="TrainerID_in" OtherKey="FK_Trainer_Slot_in" Type="Slot" />
+      <Association Name="Activity_Trainer" Member="Activity" ThisKey="FK_Activity_Trainer_in" OtherKey="ActivityID_in" Type="Activity" IsForeignKey="true" />
+      <Association Name="UserAccount_Trainer" Member="UserAccount" ThisKey="FK_UserAccount_Trainer_in" OtherKey="UserAccountID_in" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccount" Member="UserAccounts">
+    <Type Name="UserAccount">
+      <Column Name="UserAccountID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName_vc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password_vc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName_vc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName_vc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address_vc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNumber_vc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EmailId_vc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DOB_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SSN_vc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FK_UserType_UserAccount_in" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserAccount_Member" Member="Members" ThisKey="UserAccountID_in" OtherKey="FK_UserAccount_Member_in" Type="Member" />
+      <Association Name="UserAccount_Trainer" Member="Trainers" ThisKey="UserAccountID_in" OtherKey="FK_UserAccount_Trainer_in" Type="Trainer" />
+      <Association Name="UserType_UserAccount" Member="UserType" ThisKey="FK_UserType_UserAccount_in" OtherKey="UserTypeID_in" Type="UserType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserType" Member="UserTypes">
+    <Type Name="UserType">
+      <Column Name="UserTypeID_in" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserType_vc" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="UserType_UserAccount" Member="UserAccounts" ThisKey="UserTypeID_in" OtherKey="FK_UserType_UserAccount_in" Type="UserAccount" />
+    </Type>
+  </Table>
+</Database>

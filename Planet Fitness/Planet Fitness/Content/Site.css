@@ -1,0 +1,640 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"],
+/*Added on 17thSep2014*/
+input[type="number"],
+input[type="date"] {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+    .body-content {
+        padding: 0;
+    }
+
+ /*Added on 18th September*/
+
+ /* top level
+--------------------------------------------*/
+.menuTemplate3
+{
+    margin: 0 auto; width: auto;float:left;
+    position:relative;
+    z-index:4;
+    height: 36px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    list-style: none;
+    padding-left: 1px;
+}
+
+.menuTemplate1 div {
+    box-sizing:content-box;
+}  
+
+.menuTemplate3 li
+{
+    padding: 0;
+    float: left;
+    height: 36px;
+    position: relative;/*delete it if you want submenu to be positioned relative to the whole menu instead of this li element*/
+    color: #EEE;
+    z-index:5;
+}
+
+.menuTemplate3 li:hover, .menuTemplate3 li.onhover
+{
+    border-top:0;
+}
+.menuTemplate3 a
+{
+    padding: 0 30px;
+    line-height: 36px; /*Note: keep this value the same as the height of .menuTemplate3 li */
+    font-size: 17px;
+    font-weight: inherit;
+    display: inline-block;
+    outline: 0;
+    text-decoration: none;
+    color: #FFF;
+    position: relative;
+}
+.menuTemplate3 li:hover a, .menuTemplate3 li.onhover a
+{
+    background-color: #222;
+    color: #FFF;
+    z-index: 9;
+}
+.menuTemplate3 a.arrow
+{
+    background: url(arrow.gif) no-repeat right center;
+}
+ 
+        
+/*Used to align a top-level item to the right*/        
+.menuTemplate3 li.menuRight
+{
+    float: right;
+    margin-right: 0px;
+}
+        
+/*for the top-level separators*/
+.menuTemplate3 li.separator
+{
+    font-size:0;
+    overflow:hidden;
+    border-left:1px solid #aaa;
+    height:20px;
+    margin-top:8px;
+    z-index:4;
+}
+               
+        
+/* sub level
+--------------------------------------------*/
+        
+.menuTemplate3 .drop
+{
+    position: absolute;
+    z-index:5;
+    left: -9999px;
+    background: #222;           
+    text-align: left;
+    padding: 20px;  
+    top:35px;
+	color:#999;
+}
+
+.menuTemplate3 .drop a
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    line-height: 26px;
+    font-size: 16px;
+    font-weight: inherit;
+    display: inline;
+    text-align: left;
+    
+    position: static;
+    z-index: 0;
+}
+
+.menuTemplate3 li:hover .drop, .menuTemplate3 li.onhover .drop
+{
+    left: -1px;/*Use this property to change offset of the dropdown*/
+}
+.menuTemplate3 li:hover .dropToLeft, .menuTemplate3 li.onhover .dropToLeft
+{
+    left: auto;
+    right: -1px;
+}
+.menuTemplate3 li:hover .dropToLeft2, .menuTemplate3 li.onhover .dropToLeft2
+{
+    left: auto;
+    right: -60px;
+}
+
+/* Elements within the drop down sub-menu
+--------------------------------------------*/
+.menuTemplate1 li:hover .drop a, .menuTemplate1 li.onhover .drop a
+{
+    background: none;
+    background-image:none;
+    padding:0 0;
+}
+.menuTemplate3 div.drop div a
+{
+    line-height: 24px;  
+	color:white;
+    background:none;
+}
+.menuTemplate3 div.drop div a:hover
+{
+    text-decoration:underline;
+    cursor:pointer;
+    color:Red;
+}
+
+.menuTemplate3 div.left {float:left;}
+
+ 
+/* CSS3 effects
+--------------------------------------------*/
+ 
+/*for top-level*/       
+.decor3_1 
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    -moz-box-shadow: 1px 2px 4px 2px #999;
+    -webkit-box-shadow: 1px 2px 4px 2px #999;
+    box-shadow: 1px 2px 4px 2px #999;
+}
+
+/*for submenu.*/   
+.decor3_2 
+{
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    -moz-box-shadow: 0px 8px 14px #777;
+    -webkit-box-shadow: 0px 8px 14px #777;
+    box-shadow: 0px 8px 14px #777;  
+}
+/*Added 21Sep2014*/
+/*Added on 22Sep2014*/
+        .ddl
+        {
+            width:14%;
+            padding:3px;
+            margin: 0;
+            -webkit-border-radius:4px;
+            -moz-border-radius:4px;
+            border-radius:4px;
+            -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+            -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+            box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+            background: #f8f8f8;
+            color:#888;
+            border:none;
+            outline:none;
+            display: inline-block;
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            cursor:pointer;
+        }
+/*Added for SlotInformation*/
+.CSSTableGeneratorSlot {
+	margin:0px;padding:0px;
+	width:50%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #3f7f00;
+	align-content:center;
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}.CSSTableGeneratorSlot table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGeneratorSlot th{
+    text-align:center;
+}
+ 
+ .CSSTableGeneratorSlot tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.CSSTableGeneratorSlot table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.CSSTableGeneratorSlot table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.CSSTableGeneratorSlot tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.CSSTableGeneratorSlot tr:hover td{
+	
+}
+.CSSTableGeneratorSlot tr:nth-child(odd){ background-color:#d4ffaa; }
+.CSSTableGeneratorSlot tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGeneratorSlot td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #3f7f00;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:7px;
+	font-size:15px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}.CSSTableGeneratorSlot tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGeneratorSlot tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGeneratorSlot tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGeneratorSlot tr:first-child td{
+		background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+	background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");	background: -o-linear-gradient(top,#5fbf00,3f7f00);
+
+	background-color:#5fbf00;
+	border:0px solid #3f7f00;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGeneratorSlot tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+	background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");	background: -o-linear-gradient(top,#5fbf00,3f7f00);
+
+	background-color:#5fbf00;
+}
+.CSSTableGeneratorSlot tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGeneratorSlot tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+/*Added 29Oct2014*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+/*** Table Styles **/
+
+.CSSTableGenerator table{
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+.CSSTableGenerator th {
+  color:#D5DDE5;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:18px;
+  font-weight: 100;
+  padding:8px;
+  text-align:center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+.CSSTableGenerator th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+.CSSTableGenerator th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+.CSSTableGenerator tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+.CSSTableGenerator tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+ 
+.CSSTableGenerator tr:first-child {
+  border-top:none;
+}
+
+.CSSTableGenerator tr:last-child {
+  border-bottom:none;
+}
+ 
+.CSSTableGenerator tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+.CSSTableGenerator tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+.CSSTableGenerator tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+.CSSTableGenerator tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+.CSSTableGenerator td {
+  background:#FFFFFF;
+  padding:10px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:15px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+.CSSTableGenerator td:last-child {
+  border-right: 0px;
+}
+
+.CSSTableGenerator th.text-left {
+  text-align: left;
+}
+
+.CSSTableGenerator th.text-center {
+  text-align: center;
+}
+
+.CSSTableGenerator th.text-right {
+  text-align: right;
+}
+
+.CSSTableGenerator td.text-left {
+  text-align: left;
+}
+
+.CSSTableGenerator td.text-center {
+  text-align: center;
+}
+
+.CSSTableGenerator td.text-right {
+  text-align: right;
+}
+.roundedDiv{
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    background: #dddddd;
+    border-radius: 10px;
+    }
+
+/* top level
+--------------------------------------------*/
+.menuTemplate1
+{
+    /* You will get totally diffrent menu alignment and layout by setting following margin, width, and float with different values.
+    For detailed instruction please visit www.menucool.com/horizontal/menu-layout  */
+    margin: 0 auto; width: auto;float:left;
+    /*following "behavior" works for IE6, IE7, and IE8. Other browsers will ignore it.*/
+    /*Note: htc file path(if using relative path) inside the CSS file should be relative to the page, not to the CSS file (this is unlike image path inside the CSS that is relative to the CSS file location only). 
+    So we recommend using the absolute path for the behavior file.*/
+    behavior: url("/horizontal/menuh/cssmenu.htc");
+    position:relative;
+    z-index:4;
+    height: 36px;
+    background: #D4D4D4 url(bg.gif);
+    border: 1px solid #BBB;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: 0;
+}
+
+.menuTemplate1 div {
+    box-sizing:content-box;
+}  
+   
+.menuTemplate1 li
+{
+    padding: 0;
+    float: left;
+    height: 36px;
+    position: relative;/*delete it if you want submenu to be positioned relative to the whole menu instead of this li element*/
+    color: black;
+    z-index:5;
+}
+
+.menuTemplate1 a
+{
+    padding: 0 30px;
+    line-height: 36px; /*Note: keep this value the same as the height of .menuTemplate1 li */
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    outline: 0;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+.menuTemplate1 li:hover a, .menuTemplate1 li.onhover a
+{
+    background: white url(bg.gif) repeat-x 0 -48px;
+    color: #000;
+    z-index: 9;
+}
+.menuTemplate1 a.arrow
+{
+    background: url(arrow.gif) no-repeat right center;
+}
+ 
+        
+/*Used to align a top-level item to the right*/        
+.menuTemplate1 li.menuRight
+{
+    float: right;
+    margin-right: 0px;
+}
+        
+/*for the top-level separators*/
+.menuTemplate1 li.separator
+{
+    font-size:0;
+    overflow:hidden;
+    border-left:1px solid #F7F7F7;
+    border-right:1px solid #BBBBBB;
+    z-index:4;
+}
+               
+        
+/* sub level
+--------------------------------------------*/
+.menuTemplate1 .drop
+{
+    position: absolute;
+    z-index:5;
+    left: -9999px;
+    border: 1px solid #DDD;
+    border-bottom:3px solid #0F4F89;
+    background: #FFF;            
+    text-align: left;
+    padding: 20px;  
+    color:#0F4F89;
+    top:34px;              
+}
+
+.menuTemplate1 .drop a
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    line-height: 26px;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline;
+    text-align: left;
+    
+    position: static;
+    z-index: 0;
+    background-image:none;
+}
+
+.menuTemplate1 li:hover .drop, .menuTemplate1 li.onhover .drop
+{
+    left: -1px;/*Use this property to change offset of the dropdown*/
+    background:white url(bg-right.png) no-repeat right bottom;
+}
+.menuTemplate1 li:hover .dropToLeft, .menuTemplate1 li.onhover .dropToLeft
+{
+    left: auto;
+    right: -1px;
+    background:white url(bg-left.png) no-repeat 0 bottom;
+}
+.menuTemplate1 li:hover .dropToLeft2, .menuTemplate1 li.onhover .dropToLeft2
+{
+    left: auto;
+    right: -60px;
+}
+
+/* Elements within the drop down sub-menu
+--------------------------------------------*/
+
+.menuTemplate1 div.drop div div
+{
+    padding: 6px 20px;
+}
+.menuTemplate1 li:hover .drop a, .menuTemplate1 li.onhover .drop a
+{
+    background: none;
+    background-image:none;
+    padding:0 0;
+}
+.menuTemplate1 div.drop div a
+{
+    line-height: 24px;  
+    color: #0F4F89;
+    background:none;
+}
+.menuTemplate1 div.drop div a:hover
+{
+    text-decoration:underline;
+    cursor:pointer;
+    color:Red;
+}
+
+.menuTemplate1 div.left {float:left;}
+
+        
+/* CSS3 effects
+--------------------------------------------*/
+
+/*for top-level*/     
+.decor1_1 
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    -moz-box-shadow: 0px 1px 4px #ccc;
+    -webkit-box-shadow: 0px 1px 4px #ccc;
+    box-shadow: 0px 1px 4px #ccc;
+            
+}
+
+/*for submenu.*/    
+.decor1_2 
+{
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    -moz-box-shadow: 0px 12px 20px #CCCCCC;
+    -webkit-box-shadow: 0px 12px 20px #CCCCCC;
+    box-shadow: 0px 12px 20px #CCCCCC;  
+}
+}

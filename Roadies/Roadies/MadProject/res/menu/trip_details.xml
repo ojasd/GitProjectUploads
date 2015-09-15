@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.madproject.TripDetailsActivity" >
+
+    <item
+        android:id="@+id/action_edit_trip"
+        android:orderInCategory="100"
+        android:title="@string/action_edit_trip"
+        android:showAsAction="never"/>
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="@string/menuLogout"
+        android:showAsAction="never"/>
+
+</menu>

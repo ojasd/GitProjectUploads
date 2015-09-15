@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Member.master.cs" Inherits="Planet_Fitness.Member1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+</head>
+<body style="background: url(../Images/Gym.jpg) no-repeat center center fixed;background-size: cover;padding-top:0px;">
+    <form id="form1" runat="server">
+            <div>
+            <div style="float: left; width: 20%; padding-left: 4%;">
+                <img src="../Images/logo.png" alt="Planet Fitness Logo" width="177" height="191" />
+            </div>
+            <div style="padding-top: 6%; float: right; width: 80%">
+                <ul class="menuTemplate1 decor1_1">
+                    <li><a runat ="server" href="~/Member/MemberProfile">Profile</a></li>
+                    <li class="separator"></li>
+                    <li><a runat ="server" href="~/Member/SlotBooking">Book a Slot</a></li>
+                    <li class="separator"></li>
+                    <li><a runat ="server" href="~/Member/BookingInformation">Booking Information</a></li>
+                    <li class="separator"></li>
+                    <li><a runat ="server" href="~/Member/PaymentDetails">Payment</a></li>
+                </ul>
+                <div style="float: right;padding-right: 4%;"><a runat ="server" href="~/Account/Logout"><img src="../Images/logout.png" style="width: 70px;height:70px;"/></a></div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Planet Fitness</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

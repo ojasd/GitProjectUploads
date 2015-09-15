@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Employee.master.cs" Inherits="Planet_Fitness.Employee" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+</head>
+<body style="background: url(../Images/Manager.jpeg) no-repeat center center fixed; background-size: cover;padding-top:0px;">
+    <form id="form1" runat="server">
+        <div>
+            <div style="float: left; width: 20%; padding-left: 4%;">
+                <img src="../Images/logo.png" alt="Planet Fitness Logo" width="177" height="191" />
+            </div>
+            <div style="padding-top: 6%; float: right; width: 80%">
+                <ul class="menuTemplate1 decor1_1">
+                    <li><a runat ="server" href="~/Employee/EmployeeProfile">Profile</a></li>
+                    <li class="separator"></li>
+                    <li><a class="arrow">Slot Manager</a>
+                        <div class="drop decor1_2" style="width: 95px;">
+                            <div class='left'>
+                                <b>Slot Menu</b>
+                                <div>
+                                    <a runat ="server" href="~/Employee/AddSlot">Add Slot</a><br />
+                                    <a runat ="server" href="~/Employee/EditSlot">Edit Slot</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="separator"></li>
+                    <li><a class="arrow">Employee Manager</a>
+                        <div class="drop decor1_2" style="width: 130px;">
+                            <div class='left'>
+                                <b>Employee Menu</b>
+                                <div>
+                                    <a runat ="server" href="~/Employee/AddEmployee">Add Employee</a><br />
+                                    <a runat ="server" href="~/Employee/EditEmployee">Edit Employee</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div style="float: right;padding-right: 4%;"><a runat ="server" href="~/Account/Logout"><img src="../Images/logout.png" style="width: 70px;height:70px;"/></a></div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Planet Fitness</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
