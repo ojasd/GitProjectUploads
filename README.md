@@ -1,2 +1,2 @@
 # GitProjectUploads
-This Repository contains all my Graduate study projects.
+This Repository contains all my Graduate study as well as personal projects.
