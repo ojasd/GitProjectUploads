@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Table</title>
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+<body>
+<div id="header">
+    <header class="wrapper_header">
+        <a class="title" href="#">Khaadad Restaurant</a>
+        <div id="aboutdiv" class="column"><a id="aboutlink" href="#">About Us</a></div>
+        <div id="howitworksdiv" class="column"><a id="bookings" href="#">Bookings</a></div>
+    </header>
+</div>
+<!--<div id="header"><include page="header_login.html" /></div>-->
+<div id="navsidebar"></div>
+<div class="pageTitleBackground"><b>Book a Table</b></div>
+<div id="backPage">
+    <a href="#">&nbsp;&nbsp;&lt;&lt;Back to the main page</a><br/>
+</div>
+<div id="loggedUserContent" class="loggedUserMainContent">
+    <form action="#" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="add"/>
+        <table class="AddStudyTable">
+            <tr>
+                <td><label>Your Name*</label></td>
+                <td><input type="text" id="newName" name="CustomerName" class="inputboxstyle" required title="Your Name"></td>
+            </tr>
+
+            <tr>
+                <td><label>Date*</label></td>
+                <td><input type="date" id="date" name="date" class="date" required></td>
+            </tr>
+            <tr>
+                <td><label>Time*</label></td>
+                <td><input type="time" id="time" name="time" class="time" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Total Number</label></td>
+                <td><input type="number" id = "TotalNumber" name="TotalNumber" class="inputboxstyle" required></td>
+            </tr>
+            <tr>
+                <td><label>Contact Details</label></td>
+                <td><textarea id = "newContactDetails" name="newContactDetails" class="newContactDetails"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" name="study_submit" class="button addstudybutton" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--<div id="footer"><include page="footer.jsp" /></div>-->
+<footer>
+    <div class="wrapper_footer">Thank You for visiting us
+    </div>
+</footer>
+</body>
+</html>
